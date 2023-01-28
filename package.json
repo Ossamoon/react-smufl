@@ -1,0 +1,13 @@
+{
+  "name": "react-smufl",
+  "private": true,
+  "workspaces": [
+    "src/*"
+  ],
+  "version": "0.1.0",
+  "description": "React SMuFL Components Monorepo",
+  "main": "index.js",
+  "repository": "https://github.com/Ossamoon/react-smufl",
+  "author": "Ossamoon <osamu950623@gmail.com>",
+  "license": "MIT"
+}
