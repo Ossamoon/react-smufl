@@ -1,0 +1,45 @@
+{
+  "name": "@react-smufl/core",
+  "private": false,
+  "version": "0.1.0",
+  "description": "React component library for rendering sheet music with SMuFL-compliant music font",
+  "repository": {
+    "url": "https://github.com/Ossamoon/react-smufl",
+    "type": "git",
+    "directory": "src/react-smufl-core"
+  },
+  "author": "Ossamoon <osamu950623@gmail.com>",
+  "license": "MIT",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "type": "module",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "sideEffects": false,
+  "bugs": {
+    "url": "https://github.com/Ossamoon/react-smufl/issues"
+  },
+  "keywords": [
+    "react",
+    "react-component",
+    "music",
+    "sheet-music",
+    "music-score",
+    "smufl",
+    "standerderd-music-font-layout",
+    "music-font",
+    "svg"
+  ],
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
+  },
+  "dependencies": {},
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  }
+}
