@@ -1,12 +1,12 @@
 {
-  "name": "@react-smufl/core",
+  "name": "@react-smufl/bravura",
   "private": false,
   "version": "0.1.3",
-  "description": "React component library for rendering sheet music with SMuFL-compliant music font",
+  "description": "React component library for rendering sheet music with Bravura music font",
   "repository": {
     "url": "https://github.com/Ossamoon/react-smufl",
     "type": "git",
-    "directory": "packages/react-smufl-core"
+    "directory": "packages/react-smufl-bravura"
   },
   "author": "Ossamoon <osamu950623@gmail.com>",
   "license": "MIT",
@@ -30,13 +30,16 @@
     "smufl",
     "standerderd-music-font-layout",
     "music-font",
+    "buravura",
     "svg"
   ],
   "peerDependencies": {
     "react": ">=16.8.0",
     "react-dom": ">=16.8.0"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@react-smufl/core": "^0.1.2"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",

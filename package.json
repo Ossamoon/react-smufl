@@ -1,14 +1,13 @@
 {
   "name": "react-smufl",
   "private": true,
-  "version": "0.1.0",
+  "version": "0.1.3",
   "description": "React SMuFL Components Monorepo",
   "repository": "https://github.com/Ossamoon/react-smufl",
   "author": "Ossamoon <osamu950623@gmail.com>",
   "license": "MIT",
   "workspaces": [
-    "packages/*",
-    "docs"
+    "packages/*"
   ],
   "dependencies": {
     "react": "^18.2.0",
