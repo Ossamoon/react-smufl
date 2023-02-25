@@ -18,7 +18,7 @@
   },
   "include": ["src"],
   "paths": {
-    "@smufl-core": ["../react-smufl-core/src"]
+    "@react-smufl/core": ["../react-smufl-core/src"]
   },
   "references": [{ "path": "./tsconfig.node.json" }]
 }

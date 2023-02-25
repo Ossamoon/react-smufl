@@ -1,7 +1,7 @@
 {
   "name": "@react-smufl/core",
   "private": false,
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "React component library for rendering sheet music with SMuFL-compliant music font",
   "repository": {
     "url": "https://github.com/Ossamoon/react-smufl",
