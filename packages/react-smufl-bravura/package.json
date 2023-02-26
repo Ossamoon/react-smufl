@@ -38,7 +38,7 @@
     "react-dom": ">=16.8.0"
   },
   "dependencies": {
-    "@react-smufl/core": "^0.1.2"
+    "@react-smufl/core": "^0.1.6"
   },
   "scripts": {
     "dev": "vite",

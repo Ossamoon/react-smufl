@@ -15,6 +15,11 @@ export default defineConfig({
       formats: ['es'],
     },
   },
+  resolve: {
+    alias: {
+      '@react-smufl/core': resolve(__dirname, '../react-smufl-core/src'),
+    },
+  },
 
   plugins: [react(), dts()],
 });
