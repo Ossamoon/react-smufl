@@ -16,6 +16,8 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
       - name: Install
         run: npm install
+      - name: TypeCheck
+        run: npm run typecheck & npm run typecheck --workspaces
       - name: Build
         run: npm run build --workspaces
       - name: Publish
