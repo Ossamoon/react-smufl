@@ -26,7 +26,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        library: ['core', 'sample']
+        library: ['core', 'bravura']
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -40,10 +40,10 @@ jobs:
       - name: Check package.json changes
         id: check_changes
         run: |
-          echo "::set-output name=publish::$(git diff --name-only HEAD~1 HEAD | grep -q 'packages/${{ matrix.library }}/package.json' && echo 'true' || echo 'false')"
+          echo "::set-output name=publish::$(git diff --name-only HEAD~1 HEAD | grep -q 'packages/react-smufl-${{ matrix.library }}/package.json' && echo 'true' || echo 'false')"
       - name: Publish
         if: steps.check_changes.outputs.publish == 'true'
-        run: npm publish --access=public --workspace packages/${{ matrix.library }}
+        run: npm publish --access=public --workspace packages/react-smufl-${{ matrix.library }}
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
       - name: Add publish comment
@@ -54,7 +54,7 @@ jobs:
           script: |
             const { owner, repo } = context.repo;
             const { sha } = context;
-            const message = `:tada: *npm publish* was executed for the \`${{ matrix.library }}\` library.`;
+            const message = `:tada: *npm publish* was executed for the \`@react-smufl/${{ matrix.library }}\` library.`;
             await github.rest.repos.createCommitComment({
               owner,
               repo,
