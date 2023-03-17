@@ -19,6 +19,7 @@ jobs:
       - name: TypeCheck
         run: npm run typecheck --workspaces
   publish-to-npm:
+    needs: check
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
