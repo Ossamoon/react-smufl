@@ -4,7 +4,7 @@ on:
     branches:
       - main
 jobs:
-  common:
+  publish-to-npm:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -17,47 +17,8 @@ jobs:
       - name: Install
         run: npm install
       - name: TypeCheck
-        run: npm run typecheck --workspaces
-      - name: Build
-        run: npm run build --workspaces
-
-  publish-to-npm:
-    needs: common
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        library: ['core', 'bravura']
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Use Node.js 16.x
-        uses: actions/setup-node@v3
-        with:
-          node-version: '16.x'
-          registry-url: 'https://registry.npmjs.org'
-      - name: Install
-        run: npm install
-      - name: Check package.json changes
-        id: check_changes
-        run: |
-          echo "::set-output name=publish::$(git diff --name-only HEAD~1 HEAD | grep -q 'packages/react-smufl-${{ matrix.library }}/package.json' && echo 'true' || echo 'false')"
+        run: npm run typecheck & npm run typecheck --workspaces
       - name: Publish
-        if: steps.check_changes.outputs.publish == 'true'
-        run: npm publish --access=public --workspace packages/react-smufl-${{ matrix.library }}
+        run: npm publish --access=public --workspaces
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
-      - name: Add publish comment
-        if: steps.check_changes.outputs.publish == 'true'
-        uses: actions/github-script@v5
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          script: |
-            const { owner, repo } = context.repo;
-            const { sha } = context;
-            const message = `:tada: *npm publish* was executed for the \`@react-smufl/${{ matrix.library }}\` library.`;
-            await github.rest.repos.createCommitComment({
-              owner,
-              repo,
-              commit_sha: sha,
-              body: message
-            });
