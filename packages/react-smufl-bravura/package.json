@@ -1,7 +1,7 @@
 {
   "name": "@react-smufl/bravura",
   "private": false,
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "React component library for rendering sheet music with Bravura music font",
   "repository": {
     "url": "https://github.com/Ossamoon/react-smufl",
@@ -38,7 +38,7 @@
     "react-dom": ">=16.8.0"
   },
   "dependencies": {
-    "@react-smufl/core": "^0.1.6"
+    "@react-smufl/core": "^0.1.7"
   },
   "scripts": {
     "dev": "vite",
